@@ -1,0 +1,35 @@
+from django.db import models
+
+class FoodTruck(models.Model):
+    locationid = models.TextField()
+    applicant = models.CharField(max_length=255)
+    facility_type = models.CharField(max_length=50)
+    cnn = models.CharField(max_length=50)
+    location_description = models.TextField()
+    address = models.CharField(max_length=255)
+    blocklot = models.CharField(max_length=20, blank=True)
+    block = models.CharField(max_length=10, blank=True)
+    lot = models.CharField(max_length=100, blank=True)
+    permit = models.CharField(max_length=20)
+    status = models.CharField(max_length=1000)
+    food_items = models.TextField(blank=True)
+    x_coordinate = models.TextField()
+    y_coordinate = models.TextField()
+    latitude = models.TextField()
+    longitude = models.TextField()
+    schedule = models.URLField(blank=True)
+    dayshours = models.CharField(max_length=255, blank=True)
+    noi_sent = models.CharField(max_length=50, blank=True)
+    approved = models.CharField(max_length=50, blank=True)
+    received = models.CharField(max_length=50, blank=True)
+    prior_permit = models.TextField(blank=True, null=True)
+    expiration_date = models.CharField(max_length=50, blank=True)
+    location = models.CharField(max_length=255)
+    fire_prevention_districts = models.CharField(max_length=50, blank=True)
+    police_districts = models.CharField(max_length=50, blank=True)
+    supervisor_districts = models.CharField(max_length=50, blank=True)
+    zip_codes = models.CharField(max_length=50, blank=True)
+    neighborhoods = models.CharField(max_length=255, null = True, blank=True)
+    
+    def __str__(self):
+        return self.applicant
